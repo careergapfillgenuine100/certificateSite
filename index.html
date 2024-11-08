@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trusted Degree Certificates</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(to right, #003366, #006699);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 5px solid #fff;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-family: 'Lora', serif;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* About Section */
+        .about {
+            background-color: #fff;
+            padding: 60px 0;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #003366;
+            text-align: center;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            text-align: justify;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 10px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        /* Trust Section */
+        .trust {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .trust h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #003366;
+            text-align: center;
+        }
+
+        .trust-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .trust-content ul {
+            list-style-type: none;
+            padding-left: 0;
+            font-size: 1.1rem;
+        }
+
+        .trust-content ul li {
+            margin-bottom: 12px;
+        }
+
+        .trust-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+ /* Degree Catalog Section */
+ .catalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        .degree-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .degree-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .degree-card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .degree-card h3 {
+            font-size: 1.8rem;
+            margin-top: 15px;
+        }
+
+        .degree-card p {
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .degree-card span {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #003366;
+        }
+
+        .negotiable-note {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: #888;
+        }
+        /* Carousel Section */
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            max-height: 500px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            max-width: 100%;
+            object-fit: fill;
+            margin-left: 100px;
+            margin-right: 30px;
+        }
+
+        /* Process Section */
+        .process {
+            background-color: #ffffff;
+            padding: 60px 0;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .process h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #003366;
+            text-align: center;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .step {
+            text-align: center;
+            flex: 1;
+        }
+
+        .step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .step img {
+            width: 80%;
+            max-width: 200px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        /* Affordability & Payment Options */
+        .affordability {
+            background-color: #ffffff;
+            padding: 60px 0;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .affordability h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #003366;
+            text-align: center;
+        }
+
+        .affordability-content ul {
+            list-style-type: none;
+            padding-left: 0;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        .affordability-content ul li {
+            margin-bottom: 15px;
+        }
+
+        .affordability-content p {
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #f4f4f4;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .contact a {
+            color: #003366;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Trusted Degree Certificates</h1>
+            <p>Your Reliable Source for Genuine & Affordable Degree Certificates</p>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2>What We Do</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>We provide verified, genuine degree certificates for students and professionals to meet their career and educational requirements. Our services are affordable, fast, and secure—designed to give you peace of mind and career advancement.</p>
+                </div>
+                <div class="about-image">
+                    <img src="./Assets/Images/Screenshot_20241108-133714.png" alt="Degree Certificate Image">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Carousel Section -->
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="./Assets/Images/IMG-20241005-WA0002.jpg" alt="Carousel Image 1">
+            <img src="./Assets/Images/IMG-20241107-WA0003.jpg" alt="Carousel Image 2">
+            <img src="./Assets/Images/Screenshot_20241107-144913.png" alt="Carousel Image 3">
+            <img src="./Assets/Images/Screenshot_20241107-144917.png" alt="Carousel Image 4">
+            <img src="./Assets/Images/Screenshot_20241107-144922.png" alt="Carousel Image 5">
+        </div>
+    </div>
+    <!-- Trust Section -->
+    <section class="trust">
+        <div class="container">
+            <h2>Why Choose Us?</h2>
+            <div class="trust-content">
+                <ul>
+                    <li>✅ Online result available</li>
+                    <li>✅ Genuine & Authentic Certificates from UGC-Approved Colleges</li>
+                    <li>✅ Can be used for Pvt & Gvt jobs and for MS purpose</li>
+                    <li>✅ 100% Confidentiality Guaranteed</li>
+                    <li>✅ Legal Compliance with All Regulations</li>
+                    <li>✅ Fast & Secure Delivery</li>
+                </ul>
+                <div class="trust-image">
+                    <img src="./Assets/Images/istockphoto-655887334-612x612.jpg" alt="Trust and Safety">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="catalog">
+        <div class="degree-card">
+            <img src="./Assets/Images/degree.jfif" alt="Normal Degree">
+            <h3>Normal Degree</h3>
+            <p>Reliable degrees for all fields, recognized and verified.</p>
+            <span>₹1,50,000</span>
+            <div class="negotiable-note">
+                <strong>Note:</strong> For serious buyers, the price is slightly negotiable.
+            </div>
+        </div>
+        <div class="degree-card">
+            <img src="./Assets/Images/Btech.jfif" alt="B.Tech Degree">
+            <h3>B.Tech Degree</h3>
+            <p>Affordable and high-quality B.Tech degrees for your career needs.</p>
+            <span>₹3,00,000</span>
+            <div class="negotiable-note">
+                <strong>Note:</strong> For serious buyers, the price is slightly negotiable.
+            </div>
+        </div>
+        <div class="degree-card">
+            <img src="./Assets/Images/mba.jfif" alt="M.Tech & MBA Degree">
+            <h3>M.Tech & MBA Degrees</h3>
+            <p>Advanced degrees for career growth in technical and management fields.</p>
+            <span>₹2,00,000</span>
+            <div class="negotiable-note">
+                <strong>Note:</strong> For serious buyers, the price is slightly negotiable.
+            </div>
+        </div>
+    </section>
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <img src="./Assets/Images/step1.png" alt="Step 1">
+                    <h3>Step 1: Choose Your Program</h3>
+                    <p>Pick the degree or certificate program that suits your career needs.</p>
+                </div>
+                <div class="step">
+                    <img src="./Assets/Images/step2.png" alt="Step 2">
+                    <h3>Step 2: Customize Your Order</h3>
+                    <p>Select your preferred options for customization and payment plan.</p>
+                </div>
+                <div class="step">
+                    <img src="./Assets/Images/step3.png" alt="Step 3">
+                    <h3>Step 3: Secure Payment & Processing</h3>
+                    <p>Complete payment securely, and we start processing your degree.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Affordability Section -->
+    <section class="affordability">
+        <div class="container">
+            <h2>Affordable & Flexible Payment Plans</h2>
+            <p>Our services are designed to fit your budget. We offer flexible payment options to ensure you can meet your career goals without breaking the bank.</p>
+            <ul>
+                <li>💳 Full Payment - Discounted Price</li>
+                <li>💳 3 Installments - Pay in 3 Easy Steps (Best Suited.)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need further details, feel free to reach out:</p>
+            <p>Email: <a href="mailto:careergapfillgenuine100@proton.me">careergapfillgenuine100@proton.me</a></p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Trusted Degree Certificates. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- JavaScript for Carousel Auto Play -->
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel-images img');
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            document.querySelector('.carousel-images').style.transform = `translateX(-${currentIndex * 100}%)`;
+        }, 3000);
+    </script>
+</html>
