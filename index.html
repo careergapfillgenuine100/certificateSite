@@ -116,8 +116,9 @@
             max-width: 400px;
             border-radius: 10px;
         }
- /* Degree Catalog Section */
- .catalog {
+
+        /* Degree Catalog Section */
+        .catalog {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
@@ -163,6 +164,7 @@
             font-size: 1.1rem;
             color: #888;
         }
+
         /* Carousel Section */
         .carousel {
             position: relative;
@@ -181,8 +183,7 @@
             width: 100%;
             max-width: 100%;
             object-fit: fill;
-            margin-left: 100px;
-            margin-right: 30px;
+            margin-left: 0;
         }
 
         /* Process Section */
@@ -291,6 +292,105 @@
         footer p {
             font-size: 1rem;
         }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1024px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .catalog {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+            .about h2,
+            .trust h2,
+            .process h2,
+            .affordability h2 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .trust-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .steps {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .step img {
+                max-width: 150px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .about h2,
+            .trust h2,
+            .process h2,
+            .affordability h2 {
+                font-size: 1.8rem;
+            }
+
+            .catalog {
+                grid-template-columns: 1fr;
+                padding: 20px 0;
+            }
+
+            .degree-card h3 {
+                font-size: 1.4rem;
+            }
+
+            .carousel-images img {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            header p {
+                font-size: 1.2rem;
+            }
+
+            .about h2,
+            .trust h2,
+            .process h2,
+            .affordability h2 {
+                font-size: 1.6rem;
+            }
+
+            .catalog {
+                grid-template-columns: 1fr;
+            }
+
+            .degree-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .degree-card span {
+                font-size: 1.2rem;
+            }
+
+            .carousel-images img {
+                width: 100%;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -317,6 +417,7 @@
             </div>
         </div>
     </section>
+
     <!-- Carousel Section -->
     <div class="carousel">
         <div class="carousel-images">
@@ -327,6 +428,7 @@
             <img src="./Assets/Images/Screenshot_20241107-144922.png" alt="Carousel Image 5">
         </div>
     </div>
+
     <!-- Trust Section -->
     <section class="trust">
         <div class="container">
@@ -346,6 +448,7 @@
             </div>
         </div>
     </section>
+    
     <section class="catalog">
         <div class="degree-card">
             <img src="./Assets/Images/degree.jfif" alt="Normal Degree">
@@ -375,6 +478,7 @@
             </div>
         </div>
     </section>
+
     <!-- Process Section -->
     <section class="process">
         <div class="container">
